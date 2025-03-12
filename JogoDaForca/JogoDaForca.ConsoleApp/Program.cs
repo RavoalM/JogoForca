@@ -53,7 +53,7 @@
             bool perdeu = false;
 
             //rp
-            MostrarTextoLento("Por favor, insira seu nome:");
+            MostrarTextoLento("Por favor, insira seu nome: ");
             string nomeJogador = Console.ReadLine();
 
             Console.Clear();
@@ -149,8 +149,7 @@
                     Console.WriteLine("=======================================");
                     Console.WriteLine("\nPalavra: " + palavraSecreta);
                     Console.WriteLine("\n=======================================");
-                    Console.WriteLine("\n=======================================");
-                    Console.WriteLine($"Parabens {nomeJogador} conseguiu passar pelo jogo mortal da forca");
+                    Console.WriteLine($"Parabens {nomeJogador} conseguiu passar \npelo jogo mortal da forca");
                     Console.WriteLine("=======================================");
                 }
 
@@ -158,8 +157,10 @@
 
                 if (perdeu)
                 {
+                    Console.Clear();
                     Console.WriteLine("\n=======================================");
-                    Console.WriteLine("Você perdeu, você sabe o que significa.");
+                    Console.WriteLine($"{nomeJogador} Você perdeu, você sabe o que significa.");
+                    Console.WriteLine($"A palavra era {palavraSecreta}");
                     Console.WriteLine("=======================================");
                 }
 
