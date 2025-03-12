@@ -40,7 +40,7 @@
             Random geradordeNumeros = new Random();
             int indiceEscolhido = geradordeNumeros.Next(0, palavras.Length);
 
-            String palavraSecreta = palavras[indiceEscolhido];  
+            String palavraSecreta = palavras[indiceEscolhido];
             char[] letrasDescobertas = new char[palavraSecreta.Length];
 
             for (int caracterAtual = 0; caracterAtual < palavraSecreta.Length; caracterAtual++)
@@ -52,6 +52,18 @@
             bool Ganhou = false;
             bool perdeu = false;
 
+            //rp
+            MostrarTextoLento("Por favor, insira seu nome:");
+            string nomeJogador = Console.ReadLine();
+
+            Console.Clear();
+            MostrarTextoLento($"Olá {nomeJogador}, eu quero jogar um jogo com você...");
+            Thread.Sleep(2000);
+
+            Console.Clear();
+            MostrarTextoLento($"Pelo seu crime de começar uma nova linguagem de programação sem ter feito Hello World, terá que passar por um jogo");
+            Thread.Sleep(3000);
+
             do
             {
                 string palavraDescoberta = String.Join("", letrasDescobertas);
@@ -62,23 +74,21 @@
                 string troncoInfEnforcado = quantidadeErros >= 2 ? " H" : " ";
                 string bracoEsquerdoEnforcado = quantidadeErros >= 3 ? "/" : " ";
                 string bracoDireitoEnforcado = quantidadeErros >= 3 ? "\\ " : " ";
-                string pernasEnforcado = quantidadeErros >= 4 ?"/ \\ " : " ";
+                string pernasEnforcado = quantidadeErros >= 4 ? "/ \\ " : " ";
 
                 Console.Clear();
                 Console.WriteLine("=======================================");
-                Console.WriteLine("Eu quero jogar um jogo com você");
-                Console.WriteLine("\nÉ o Jogo da Forca");
+                Console.WriteLine("É o Jogo da Forca");
                 Console.WriteLine("=======================================");
                 Console.WriteLine("  _______         ");
-                Console.WriteLine(" |/     {0}       ",  ForcaEnforcado);
+                Console.WriteLine(" |/     {0}       ", ForcaEnforcado);
                 Console.WriteLine(" |      {0}       ", cabeçaEnforcado);
-                Console.WriteLine(" |      {0}{1}{2} ", bracoEsquerdoEnforcado,troncoEnforcado,bracoDireitoEnforcado);
+                Console.WriteLine(" |      {0}{1}{2} ", bracoEsquerdoEnforcado, troncoEnforcado, bracoDireitoEnforcado);
                 Console.WriteLine(" |      {0}       ", troncoInfEnforcado);
                 Console.WriteLine(" |      {0}       ", pernasEnforcado);
                 Console.WriteLine(" |                ");
                 Console.WriteLine("_|_____           ");
                 Console.WriteLine("=======================================");
-                Console.WriteLine("Erros do jogador: " + quantidadeErros);
                 Console.WriteLine("=======================================");
                 Console.WriteLine("\nPalavra: " + palavraDescoberta);
                 Console.WriteLine("\n=======================================");
@@ -116,7 +126,7 @@
                     quantidadeErros++;
                 }
 
-                string palavraDescobertaCompleta = String.Join("", letrasDescobertas); 
+                string palavraDescobertaCompleta = String.Join("", letrasDescobertas);
 
                 Ganhou = palavraDescobertaCompleta == palavraSecreta;
 
@@ -124,8 +134,7 @@
                 {
                     Console.Clear();
                     Console.WriteLine("=======================================");
-                    Console.WriteLine("Eu quero jogar um jogo com você");
-                    Console.WriteLine("\nÉ o Jogo da Forca");
+                    Console.WriteLine("É o Jogo da Forca");
                     Console.WriteLine("=======================================");
                     Console.WriteLine("  _______         ");
                     Console.WriteLine(" |/     {0}       ", ForcaEnforcado);
@@ -141,7 +150,7 @@
                     Console.WriteLine("\nPalavra: " + palavraSecreta);
                     Console.WriteLine("\n=======================================");
                     Console.WriteLine("\n=======================================");
-                    Console.WriteLine("Parabens você conseguiu passar pelo jogo mortal da forca");
+                    Console.WriteLine($"Parabens {nomeJogador} conseguiu passar pelo jogo mortal da forca");
                     Console.WriteLine("=======================================");
                 }
 
@@ -157,6 +166,15 @@
             } while (Ganhou != true && perdeu != true);
 
             Console.ReadLine();
+
+            static void MostrarTextoLento(string texto)
+            {
+                foreach (char c in texto)
+                {
+                    Console.Write(c);
+                    Thread.Sleep(50);
+                }
+            }
         }
     }
 }
