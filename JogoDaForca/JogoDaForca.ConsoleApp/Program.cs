@@ -89,6 +89,7 @@
                 Console.WriteLine(" |                ");
                 Console.WriteLine("_|_____           ");
                 Console.WriteLine("=======================================");
+                Console.WriteLine("Erros do jogador: " + quantidadeErros);
                 Console.WriteLine("=======================================");
                 Console.WriteLine("\nPalavra: " + palavraDescoberta);
                 Console.WriteLine("\n=======================================");
