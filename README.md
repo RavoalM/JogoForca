@@ -24,7 +24,7 @@ Contagem de Erros: Você pode errar cinco vezes antes que o inevitável aconteç
 <br><br>
 - **A forca**: O relógio está correndo e seus erros estão sendo contados. Com cada falha, a estrutura se ergue, peça por peça. Primeiro a base… depois você… então a corda. E quando você perceber… já estará pendurado.
 <br> <br>
-![](https://i.imgur.com/5zjJEth.gif)
+![](https://i.imgur.com/jiIzwkT.gif)
 
 ## Como utilizar
 
